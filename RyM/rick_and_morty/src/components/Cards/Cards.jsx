@@ -1,20 +1,23 @@
-import Card from './Card';
+import Card from "../Card/Card.jsx";
 
-export default function Cards({ characters }) {
+const Cards = ({ characters, onClose }) => {
    return (
       <div>
          {characters.map((character) => (
             <Card
                key={character.id}
+               id={character.id}
                name={character.name}
                status={character.status}
                species={character.species}
                gender={character.gendeer}
                origin={character.origin.name}
                image={character.image}
-               oneClose={() => window.alert('Emulamos que se cierra la card')}
+               onClose={onClose}
             />
          ))}
       </div>
    );
 }
+
+export default Cards;
